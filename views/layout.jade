@@ -1,0 +1,17 @@
+doctype
+html
+  head
+    title #{title} - My Site
+  body
+    header
+      h1 This is my simple website
+    .container
+      .main-content
+        block content
+      .sidebar
+        block sidebar
+    label Username:
+      input(name='user[name]')
+    input(type="checkbox", checked)
+    footer
+      p Running on node with Express and Jade
