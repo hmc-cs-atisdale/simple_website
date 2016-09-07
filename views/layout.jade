@@ -1,7 +1,10 @@
+
+
 doctype
 html
   head
     title #{title} - My Site
+    
   body
     header
       h1 This is my simple website
@@ -11,7 +14,18 @@ html
       .sidebar
         block sidebar
     label Username:
-      input(name='user[name]')
-    input(type="checkbox", checked)
+      input(type='text', id='name')
+    label Date:
+      input(type='text', id='date')
+
+    input(type="checkbox", checked, id='checkbox')
+    script.
+      var output = function(){
+      window.alert('Name:  ' + document.getElementById('name').value + '\nDate:  ' + document.getElementById('date').value );
+      console.log('I clicked the thing');
+      console.log(document.getElementById('name').value);
+      console.log(document.getElementById('date').value);
+      console.log(document)}
+    button(type="submit", onClick="output()") Submit
     footer
       p Running on node with Express and Jade
